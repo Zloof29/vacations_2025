@@ -1,0 +1,150 @@
+.VacationCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.vacation-box {
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.date {
+  background-color: #f0f8ff;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.date p {
+  margin: 5px 0;
+}
+
+.destination {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px;
+  text-align: center;
+  height: 100px;
+  overflow: auto;
+}
+
+.price {
+  background-color: green;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.likes-info {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.like-status {
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.like-status.liked {
+  background-color: green;
+  border: 0px;
+}
+
+.like-status.liked:hover {
+  background-color: rgba(0, 128, 0, 0.867);
+  transform: scale(1.05);
+}
+
+.like-status.not-liked {
+  background-color: red;
+  border: 0px;
+}
+
+.like-status.not-liked:hover {
+  background-color: rgba(255, 0, 0, 0.849);
+  transform: scale(1.05);
+}
+
+.likes-count {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.admin-button {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px;
+}
+
+.admin-button.delete {
+  background-color: #dc3545; /* Red */
+  color: white;
+  border: 0px;
+}
+
+.admin-button.delete:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05);
+}
+
+.admin-button.update {
+  background-color: #007bff;
+  color: white;
+  border: 0px;
+}
+
+.admin-button.update:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

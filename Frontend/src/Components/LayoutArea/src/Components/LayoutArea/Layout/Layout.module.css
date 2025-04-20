@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Layout {
+  height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 50px 50px 1fr 30px;
+  grid-template-columns: 100%;
+  gap: 10px;
+}
+
+header {
+  grid-row: 1;
+}
+
+.menu {
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+main {
+  grid-row: 3;
+  overflow: visible;
+}
+
+footer {
+  grid-row: 4;
+}
+
+@media (max-width: 1200px) {
+  .Layout {
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    flex-direction: column;
+    padding: 10px;
+  }
+}

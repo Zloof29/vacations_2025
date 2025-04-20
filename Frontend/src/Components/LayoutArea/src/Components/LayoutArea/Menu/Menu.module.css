@@ -1,0 +1,38 @@
+.Container {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.Item {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.Item:hover {
+  background-color: lightblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .Container {
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Take full width of the screen */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center items */
+  }
+
+  .Item {
+    /* width: 90%; Adjust item width for smaller screens */
+    margin-bottom: 10px; /* Add spacing between items */
+  }
+}
