@@ -63,17 +63,6 @@ class UserService {
     const action = userAction.logoutUser();
     store.dispatch(action);
   }
-
-  //check if its works!
-  public logoutWhenTokenIsExpired() {
-    const token = authService.getToken();
-    const checkToken = authService.isLoggedIn(token);
-
-    if (!checkToken) {
-      this.logout();
-      window.location.href = "/login";
-    }
-  }
 }
 
 export const userService = new UserService();
