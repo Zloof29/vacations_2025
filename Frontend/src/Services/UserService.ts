@@ -43,18 +43,11 @@ class UserService {
     try {
       const response = await axios.post<string>(appConfig.login, credentials);
       const token = response.data;
-      console.log("Token:", token);
 
       localStorage.setItem("token", token);
 
       const container = jwtDecode<UserModel>(token);
-      console.log("Decoded Token:", container);
       const dbUser = container;
-
-      console.log(dbUser);
-
-      const isAdmin = dbUser.roleId === "1"; // Adjust based on your role ID format
-      console.log("Is Admin:", isAdmin);
 
       const action = userAction.initUser(dbUser);
       store.dispatch(action);
