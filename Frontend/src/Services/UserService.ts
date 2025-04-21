@@ -5,7 +5,6 @@ import axios from "axios";
 import { appConfig } from "../Utils/AppConfig";
 import { CredentialsModel } from "../Models/CredentialsModel";
 import { errorHandler } from "../Utils/ErrorHandler";
-import { authService } from "./AuthService";
 
 class UserService {
   public constructor() {
