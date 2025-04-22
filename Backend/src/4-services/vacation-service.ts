@@ -67,7 +67,7 @@ class VacationService {
     ).exec();
 
     if (!updatedVacation)
-      throw new ResourceNotFoundError(vacation._id.toString());
+      throw new ResourceNotFoundError((vacation._id as string).toString());
 
     return updatedVacation;
   }

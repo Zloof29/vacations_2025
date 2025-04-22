@@ -1,8 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "moduleResolution": "Node",
-        "esModuleInterop": true,
-        "removeComments": true
-    }
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "removeComments": true,
+    "strict": true
+  },
+  "include": ["src/**/*", "src/types/express-overrides.d.ts"],
+  "exclude": ["node_modules"]
 }

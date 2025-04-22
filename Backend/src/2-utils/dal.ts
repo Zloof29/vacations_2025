@@ -5,7 +5,9 @@ import { appConfig } from "./app-config";
 class DAL {
   public async connect() {
     try {
-      const db = await mongoose.connect(appConfig.mongodbConnectionString);
+      const db = await mongoose.connect(
+        appConfig.mongodbConnectionString || ""
+      );
       console.log(
         `We're connected to mongoDb database: ${db.connections[0].name}`
       );

@@ -17,7 +17,7 @@ class MulterMiddleware {
       try {
         callback(null, this.imagesDir);
       } catch (error) {
-        callback(error, null);
+        callback(error as Error | null, "");
       }
     },
 
@@ -26,7 +26,7 @@ class MulterMiddleware {
         const uniqueName = randomUUID() + path.extname(file.originalname);
         callback(null, uniqueName);
       } catch (error) {
-        callback(error, null);
+        callback(error as Error | null, "");
       }
     },
   });

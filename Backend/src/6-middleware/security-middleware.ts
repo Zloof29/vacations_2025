@@ -12,7 +12,7 @@ class SecurityMiddleware {
 
     const token = authorizationHeader?.substring(7);
 
-    if (!cyber.isTokenValid(token)) {
+    if (!cyber.isTokenValid(token || "")) {
       const err = new UnauthorizedError("You are not logged in.");
       next(err);
     } else {
@@ -29,7 +29,7 @@ class SecurityMiddleware {
 
     const token = authorizationHeader?.substring(7);
 
-    if (!cyber.isAdmin(token)) {
+    if (!cyber.isAdmin(token || "")) {
       const err = new UnauthorizedError("You are not authorized.");
 
       next(err);
