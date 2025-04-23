@@ -62,7 +62,7 @@ export function InActiveVacations(): React.ReactElement {
   return (
     <div>
       <div className={styles.VacationContainer}>
-        {vacationsMemo?.map((vacation) => (
+        {paginatedVacations?.map((vacation: VacationModel) => (
           <VacationCard
             key={vacation._id}
             vacation={vacation}
