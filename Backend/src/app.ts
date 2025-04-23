@@ -28,10 +28,10 @@ class App {
     // Connect any controller route to the server:
     this.server.use("/api", vacationRouter, userRouter, likeRouter);
 
-    this.server.use(
-      "/images",
-      express.static(path.resolve("src", "1-assets", "images"))
-    );
+    // this.server.use(
+    //   "/images",
+    //   express.static(path.resolve("src", "1-assets", "images"))
+    // );
 
     this.server.use(
       "/images",
