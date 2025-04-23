@@ -33,6 +33,11 @@ class App {
       express.static(path.resolve("src", "1-assets", "images"))
     );
 
+    this.server.use(
+      "/images",
+      express.static(path.join(__dirname, "1-assets", "images"))
+    );
+
     // Route not found middleware:
     this.server.use(errorsMiddleware.routeNotFound);
 
