@@ -16,7 +16,21 @@ export function AddVacation(): React.ReactElement {
 
   async function send(vacation: VacationModel) {
     try {
-      await vacationService.addVacation(vacation);
+      const formData = new FormData();
+
+      formData.append("destination", vacation.destination);
+      formData.append("description", vacation.description);
+      formData.append("startDate", vacation.startDate.toString());
+      formData.append("endDate", vacation.endDate.toString());
+      formData.append("price", vacation.price.toString());
+
+      // @ts-ignore – react-hook-form returns FileList
+      const file = vacation.image?.[0];
+      if (file) {
+        formData.append("image", file); // ✅ match .single("image")
+      }
+
+      await vacationService.addVacation(formData); // Send FormData
       notify.success("Vacation has been added.");
       navigate("/vacations");
     } catch (error: any) {
