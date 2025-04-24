@@ -38,6 +38,16 @@ class App {
       express.static(path.join(__dirname, "1-assets", "images"))
     );
 
+    this.server.use("/images", (req, res, next) => {
+      console.log("🖼️ Requesting image:", req.url);
+      next();
+    });
+
+    this.server.use(
+      "/images",
+      express.static(path.join(__dirname, "1-assets", "images"))
+    );
+
     // Route not found middleware:
     this.server.use(errorsMiddleware.routeNotFound);
 
