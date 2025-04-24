@@ -76,7 +76,7 @@ class MulterMiddleware {
     },
   });
 
-  public upload = multer({ storage: this.storage }).single("image[]");
+  public upload = multer({ storage: this.storage }).single("image");
 }
 
 export const multerMiddleware = new MulterMiddleware();
