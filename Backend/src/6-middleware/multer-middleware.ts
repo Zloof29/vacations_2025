@@ -47,6 +47,7 @@ class MulterMiddleware {
 
   constructor() {
     this.imagesDir = path.join(__dirname, "..", "1-assets", "images");
+    console.log("📁 Upload path:", this.imagesDir); // <== ADD THIS TOO
 
     if (!fs.existsSync(this.imagesDir)) {
       fs.mkdirSync(this.imagesDir, { recursive: true });
@@ -67,6 +68,7 @@ class MulterMiddleware {
     filename: (req, file, callback) => {
       try {
         const uniqueName = randomUUID() + path.extname(file.originalname);
+        console.log("📸 Upload filename:", uniqueName); // <== ADD THIS
         callback(null, uniqueName);
       } catch (error) {
         callback(error as Error | null, "");
