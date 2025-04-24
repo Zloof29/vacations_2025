@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "tsc",
+    "postbuild": "cp -r src/1-assets/images dist/1-assets/images",
     "start": "node dist/app.js"
   },
   "keywords": [],
