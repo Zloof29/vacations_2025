@@ -65,9 +65,7 @@ class VacationService {
     }
   }
 
-  public async addVacation(
-    vacation: VacationModel
-  ): Promise<VacationModel | null> {
+  public async addVacation(vacation: FormData): Promise<VacationModel | null> {
     try {
       const isValidateToken = await this.validationToken(true);
       if (!isValidateToken) return null;
@@ -86,7 +84,7 @@ class VacationService {
       const action = vacationAction.addVacation(addedVacation);
       store.dispatch(action);
 
-      return vacation;
+      return addedVacation;
     } catch (error: any) {
       console.log(errorHandler.getError(error));
       return null;
