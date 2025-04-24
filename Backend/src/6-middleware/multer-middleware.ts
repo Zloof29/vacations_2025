@@ -4,7 +4,8 @@ import fs from "fs";
 import { randomUUID } from "crypto";
 
 class MulterMiddleware {
-  private imagesDir = path.resolve("src", "1-assets", "images");
+  // private imagesDir = path.resolve("src", "1-assets", "images");
+  private imagesDir = path.join(__dirname, "..", "1-assets", "images");
 
   constructor() {
     if (!fs.existsSync(this.imagesDir)) {
